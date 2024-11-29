@@ -1,0 +1,17 @@
+Which classes are aggregates of other classes?
+CompactDisc, Book, Store and Cart.
+
+If the passing object is not an instance of Media, what happens?
+ClassCastException will be thrown at runtime. This is because Java does not allow casting an object to a type it does not inherit from or implement.
+
+What class should implement the Comparable interface?
+The Media class should implement the Comparable interface because all mentioned media types inherit from it. By this approach, you can define a general ordering for all medias.
+
+In those classes, how should you implement the compareTo() method be to reflect the ordering that we want?
+Implement the compareTo() method in Media class, starting by comparing title/cost first and then cost/title in case of equality.
+
+Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+No, the Comparable interface only allows for only one way at all.
+
+Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+Just override the method in DigitalVideoDisc, starting by compare length first, then length and cost finally.
